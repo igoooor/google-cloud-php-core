@@ -17,6 +17,7 @@
 namespace Google\Cloud\Core\Logger;
 
 use Exception;
+use Monolog\Level;
 use Monolog\Logger;
 
 /**
@@ -42,7 +43,7 @@ class AppEngineFlexHandlerFactory
      * @return AppEngineFlexHandler|AppEngineFlexHandlerV2
      */
     public static function build(
-        $level = Logger::INFO,
+        $level = Level::Info,
         $bubble = true,
         $filePermission = 0640,
         $useLocking = false,

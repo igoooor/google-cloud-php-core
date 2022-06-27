@@ -18,7 +18,7 @@ namespace Google\Cloud\Core\Logger;
 
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use Monolog\Level;
 
 /**
  * Monolog 2.x handler for logging on App Engine flexible environment.
@@ -39,7 +39,7 @@ class AppEngineFlexHandlerV2 extends StreamHandler
      * @param resource|string|null $stream [optional]
      */
     public function __construct(
-        $level = Logger::INFO,
+        $level = Level::Info,
         $bubble = true,
         $filePermission = 0640,
         $useLocking = false,

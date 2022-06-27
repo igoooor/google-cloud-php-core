@@ -17,6 +17,7 @@
 namespace Google\Cloud\Core\Logger;
 
 use Monolog\Formatter\LineFormatter;
+use Monolog\LogRecord;
 
 /**
  * Monolog 2.x formatter for formatting logs on App Engine flexible environment.
@@ -44,7 +45,7 @@ class AppEngineFlexFormatterV2 extends LineFormatter
      * @param array $record A record to format
      * @return string The formatted record
      */
-    public function format(array $record): string
+    public function format(LogRecord $record): string
     {
         return $this->formatPayload($record, parent::format($record));
     }
